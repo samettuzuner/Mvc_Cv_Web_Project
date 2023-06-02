@@ -1,0 +1,24 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblHakkimda
+@{
+    ViewBag.Title = "HakkimdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Hakkımda Düzenleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
+

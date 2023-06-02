@@ -1,0 +1,24 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblEgitimlerim
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3> Yeni Eğitim Bilgisi Ekleme Sayfası</h3>
+<br />
+<form method="post">
+    @Html.Label("Üniversite")
+    @Html.TextBoxFor(x => x.Universite, new  { @class = "form-control",placeholder ="Üniversite Adı Giriniz" })
+    <br />
+    @Html.Label("Bölüm")
+    @Html.TextBoxFor(x => x.Bolum, new { @class = "form-control", placeholder = "Bölüm Adı Giriniz" })
+    <br />
+    @Html.Label("GANO")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control", placeholder = "GANO  Giriniz" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", placeholder = "Tarih Giriniz" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

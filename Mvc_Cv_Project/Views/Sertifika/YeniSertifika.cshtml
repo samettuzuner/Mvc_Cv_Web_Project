@@ -1,0 +1,40 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblSertifikalarim>
+@{
+    ViewBag.Title = "YeniSertifika";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Yeni Sertifika Ekleme Sayfası</h3>
+<br />
+<form method="post">
+    <div class="row">
+
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Sertifika Adı</label>
+                <input type="text" class="form-control" placeholder="Açıklama Giriniz" name="Aciklama">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Tarih</label>
+                <input type="text" class="form-control" placeholder="Tarih Giriniz" name="Tarih">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Sertifika URL</label>
+                <input type="url" class="form-control" placeholder="Sertifika URL Adresi Giriniz" name="SertifikaAdres">
+            </div>
+        </div>
+        
+    </div>
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+
+
+

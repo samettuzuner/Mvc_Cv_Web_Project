@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Yeni Admin Sayfası</h3>
+<br />
+<form method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <input type="text" class="form-control" placeholder="Kullanıcı Adı Giriniz" name="KullaniciAdi">
+            </div>
+        </div>
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Şifre</label>
+                <input type="text" class="form-control" placeholder="Şifre Giriniz" name="Sifre">
+            </div>
+
+        </div>
+           </div>
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

@@ -1,0 +1,50 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblProjelerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Projeler Listesi</h2>
+
+<div class="col-md-14">
+    <div class="card card-plain">
+
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Proje Adı</th>
+                        <th>Kullanılan Diller</th>
+                        <th>Proje Link</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Proje_Adi</td>
+                            <td>@item.Kullanilan_Diller</td>
+                            <td>@item.ProjeLink</td>
+                            <td><a href="/Projelerim/ProjeSil/@item.ID" class="btn btn-danger">Sil 🗑️ </a></td>
+                            <td><a href="/Projelerim/ProjeDuzenle/@item.ID" class="btn btn-success">Düzenle🖊️</a></td>
+
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+<a href="/Projelerim/YeniProje/" class="btn btn-primary">Yeni Proje Ekle <i class="nc-icon nc-tap-01"></i></a>
+
+
+
+
+

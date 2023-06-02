@@ -1,0 +1,38 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblProjelerim>
+@{
+    ViewBag.Title = "YeniProje";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Yeni Proje Ekleme Sayfası</h3>
+<br />
+<form method="post">
+    <div class="row">
+
+        <br />
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Proje Adı</label>
+                <input type="text" class="form-control" placeholder="Proje Adı Giriniz" name="Proje_Adi">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Projde Kullanılan Diller</label>
+                <input type="text" class="form-control" placeholder="Kullanılan Dilleri Giriniz" name="Kullanilan_Diller">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Proje URL</label>
+                <input type="url" class="form-control" placeholder="Proje URL Adresi Giriniz" name="ProjeLink">
+            </div>
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+
+
+

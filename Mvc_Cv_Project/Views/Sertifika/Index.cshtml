@@ -1,0 +1,50 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblSertifikalarim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sertifikalar Listesi</h2>
+
+<div class="col-md-14">
+    <div class="card card-plain">
+
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Sertifika Adı</th>
+                        <th>Tarih</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Aciklama</td>
+                            <td>@item.Tarih</td>
+
+                            <td><a href="/Sertifika/SertifikaSil/@item.ID" class="btn btn-danger">Sil 🗑️ </a></td>
+                            <td><a href="/Sertifika/SertifikaDuzenle/@item.ID" class="btn btn-success">Düzenle🖊️</a></td>
+                    
+
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+<a href="/Sertifika/YeniSertifika/" class="btn btn-primary">Yeni Sertifika Ekle <i class="nc-icon nc-tap-01"></i></a>
+
+
+
+
+
+

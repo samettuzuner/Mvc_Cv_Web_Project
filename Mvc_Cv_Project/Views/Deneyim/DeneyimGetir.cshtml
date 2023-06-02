@@ -1,0 +1,30 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblTecrubelerim
+@{
+    ViewBag.Title = "DeneyimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h3> Tecrübe Güncelleme Sayfası</h3>
+<br />
+<form method="post">
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alt Başlık")
+    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.Label("Proje URL")
+    @Html.TextBoxFor(x => x.ResimLink, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

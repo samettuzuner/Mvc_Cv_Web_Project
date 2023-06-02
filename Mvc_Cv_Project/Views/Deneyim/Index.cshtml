@@ -1,0 +1,47 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblTecrubelerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Tecrübeler Listesi</h2>
+
+<div class="col-md-12">
+    <div class="card card-plain">
+
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                <th>Başlık</th>
+                <th>Alt Başlık</th>
+                <th>Tarih</th>
+                <th>Sil</th>
+                <th>Düzenle</th>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+
+                            <td>@item.Baslik</td>
+                            <td>@item.AltBaslik</td>
+                            <td>@item.Tarih</td>
+                            <td><a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger">Sil🗑️</a></td>
+                            <td><a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-success">Düzenle🖊️</a></td>
+
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+<a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Tecrübe Ekle <i class="nc-icon nc-tap-01"></i></a>
+
+

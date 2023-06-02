@@ -1,0 +1,21 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblProjelerim
+@{
+    ViewBag.Title = "ProjeDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3> Proje Güncelleme Sayfası</h3>
+<br />
+<form method="post">
+    @Html.Label("Proje Adı")
+    @Html.TextBoxFor(x => x.Proje_Adi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Projede Kullanılan Diller")
+    @Html.TextBoxFor(x => x.Kullanilan_Diller, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sertifika URL Adresi")
+    @Html.TextBoxFor(x => x.ProjeLink, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+</form>

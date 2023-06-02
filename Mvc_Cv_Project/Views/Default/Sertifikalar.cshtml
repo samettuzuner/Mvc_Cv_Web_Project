@@ -1,0 +1,32 @@
+﻿<div class="container-fluid bg-light my-5 py-6" id="sertifikalarim">
+    <div class="container">
+        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <h1 class="display-5 mb-0">Sertifikalarım📜</h1>
+            </div>
+        </div>
+        <div class="row g-2">
+            @foreach (var x in Model)
+            {
+                var qrCodeUrl = Url.Action("GenerateQRCode", "Default", new { ID = x.ID }, Request.Url.Scheme);
+                <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp mb-4" data-wow-delay="0.3s">
+
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+
+
+                        <img src="@qrCodeUrl" width="150" height="150">
+                     
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">@x.Aciklama</h4>
+                            <h6 class="mb-3">Bitirme Tarihi: <span class="text-primary">@x.Tarih</span></h6>
+                            <div class="text-center">
+                                <a class="btn btn-primary py-3 px-5" href="@x.SertifikaAdres" target="_blank">Sertifikaya Git</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

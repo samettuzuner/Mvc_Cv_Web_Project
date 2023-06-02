@@ -1,0 +1,18 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblEgitimlerim>
+<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+    <h1 class="display-5 mb-5">Eğitim Hayatım🎓</h1>
+    @foreach (var x in Model)
+    {
+
+        <div class="ms-sm-4">
+            <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>@x.Tarih</p>
+
+            <h5 class="mb-3">@x.Universite</h5>
+            <p class="mb-3">@x.Bolum</p>
+
+            <h6 class="text-primary fw-bold mb-0" data-toggle="counter-up">@x.GNO</h6>
+            <br />
+        </div>
+    }
+</div>

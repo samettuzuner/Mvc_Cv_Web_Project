@@ -1,0 +1,89 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblYetenekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    string renk = "";
+
+}
+
+<h2>Yetenek Listesi</h2>
+    <div class="col-md-14">
+        <div class="card card-plain">
+
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                      
+                            <th>Başlık</th>
+                            <th style="width: 600px">Oran</th>
+                            <th></th>
+                            <th></th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.Oran <= 50 && item.Oran >= 0)
+                            {
+                                renk = "#ef2d56";
+                            }
+                            if (item.Oran >= 51 && item.Oran <= 70)
+                            {
+                                renk = "#ff9900";
+                            }
+                            if (item.Oran >= 71 && item.Oran <= 84)
+                            {
+                                renk = "#82b700";
+                            }
+                            if (item.Oran >= 85 && item.Oran <= 100)
+                            {
+                                renk = "#1E90FF";
+                            }
+                            <tr>
+                           
+                                <td>@item.Yetenek</td>
+                                <td>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width:@item.Oran%; background:@renk">
+                                                        <div class="progress-value">@item.Oran%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/Yetenek/YetenekSil/@item.ID" class="btn btn-danger">Sil 🗑️ </a></td>
+                                <td><a href="/Yetenek/YetenekDuzenle/@item.ID" class="btn btn-success">Düzenle🖊️</a></td>
+
+
+
+                            </tr>
+
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <a href="/Yetenek/YeniYetenek/" class="btn btn-primary">Yeni Yetenek Ekle <i class="nc-icon nc-tap-01"></i></a>
+</div>
+</div>
+
+

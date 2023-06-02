@@ -1,0 +1,67 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Paneli</h2>
+
+<div class="col-md-12">
+    <div class="card card-plain">
+
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                <th>Kullanıcı Adı</th>
+                <th>Düzenle</th>
+                <th>Sil</th>
+
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+
+                            <td>@item.KullaniciAdi</td>
+
+                            <td><a href="/Admin/AdminGetir/@item.ID" class="btn btn-success">Düzenle🖊️</a></td>
+                            @if (item.ID != 1)
+                            {
+                                <td><a href="/Admin/AdminSil/@item.ID" class="btn btn-danger">Sil🗑️</a></td>
+                            }
+                            else
+                            {
+
+                                <td>
+                                    <a href="#" class="btn btn-secondary" onclick="showPopup(); return false;">Sil🗑️</a>
+                                </td>
+
+                                <!-- JavaScript kodu -->
+                                <script>
+                                    function showPopup() {
+                                        alert("Admin Üyeliği Silinemez");
+                                    }
+                                </script>
+
+
+
+                            }
+
+
+
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+<a href="/Admin/AdminEkle/" class="btn btn-primary">Yeni Admin Ekle <i class="nc-icon nc-tap-01"></i></a>
+
+

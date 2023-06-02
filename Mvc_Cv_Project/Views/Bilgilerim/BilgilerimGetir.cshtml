@@ -1,0 +1,26 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblBilgilerim
+@{
+    ViewBag.Title = "BilgilerimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Bilgi Güncelleme</h2>
+<br />
+<form method="post">
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ek Madde")
+    @Html.TextBoxFor(x => x.Madde1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ek Madde")
+    @Html.TextBoxFor(x => x.Madde2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ek Madde")
+    @Html.TextBoxFor(x => x.Madde3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
+

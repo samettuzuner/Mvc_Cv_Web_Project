@@ -1,0 +1,78 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<Tbliletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid"></div>
+    <div class="row"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-12"></div>
+    <div class="card card-plain table-plain-bg">
+        <div class="card-header">
+            <h4 class="card-title">Gelen Kutusu📩</h4>
+            <br />
+        </div>
+        <div class="card-body table-full-width table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <th style="width: 15%;">Tarih</th>
+                <th style="width: 20%;">Ad Soyad</th>
+                <th style="width: 30%;">Konu</th>
+                <th style="width: 15%;">Oku</th>
+                <th style="width: 20%;">Sil</th>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @(((DateTime)item.Tarih).ToString("dd-MM-yyyy"))</td>
+                            <td>@item.AdSoyad</td>
+                            <td>@item.Konu</td>
+                            <td>
+
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#@item.ID">Mesajı Aç</button>
+                                <div class="modal fade" id="@item.ID" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2>Mesaj Detayı</h2>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <p><strong>Adı Soyadı:</strong> @item.AdSoyad</p>
+
+
+                                                <div>
+                                                    <p><strong>Tarih:</strong> @(((DateTime)item.Tarih).ToString("dd-MM-yyyy"))</p>
+
+
+
+                                                </div>
+
+
+
+                                                <p><strong>Konu:</strong> @item.Konu</p>
+                                                <p><strong>Mesaj:</strong> @item.Mesaj</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" data-dismiss="modal">Okudum</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td><a href="/iletisim/iletisimSil/@item.ID" class="btn btn-danger btn-sm">Sil 🗑️ </a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Mvc_Cv_Project.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3> Şifre Güncelleme Sayfası</h3>
+<br />
+<form method="post">
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", disabled = true })
+    <br />
+    @Html.Label("Yeni Şifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @Value = "" })
+    <br />
+
+
+
+
+    <button class="btn btn-success">Güncelle</button>
+
+
+</form>
+

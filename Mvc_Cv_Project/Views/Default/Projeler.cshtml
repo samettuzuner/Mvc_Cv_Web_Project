@@ -1,0 +1,35 @@
+﻿@using Mvc_Cv_Project.Models.Entity
+@model List<TblProjelerim>
+
+
+
+<div class="container-fluid bg-light my-5 py-6" id="projelerim">
+    <div class="container">
+        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <h1 class="display-5 mb-0">Geliştirdiğim Projeler </h1>
+            </div>
+        </div>
+
+        <div class="row g-2">
+            @foreach (var x in Model)
+            {
+                <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">@x.Proje_Adi</h4>
+                            <h6 class="mb-3">Kullanılan Dil: <span class="text-primary">@x.Kullanilan_Diller</span></h6>
+                            <div class="text-center">
+                                <a class="btn btn-primary py-3 px-5" href="@x.ProjeLink" target="_blank">Projeyi Görüntüle</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
